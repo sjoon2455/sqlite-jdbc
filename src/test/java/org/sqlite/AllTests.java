@@ -7,7 +7,7 @@ import org.sqlite.util.OSInfoTest;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
     BackupTest.class,
-    ConnectionTest.class,
+    //ConnectionTest.class,
     DBMetaDataTest.class,
     ErrorMessageTest.class,
     ExtendedCommandTest.class,
@@ -22,9 +22,9 @@ import org.sqlite.util.OSInfoTest;
     RSMetaDataTest.class,
     SavepointTest.class,
     SQLiteDataSourceTest.class,
-    SQLiteConnectionPoolDataSourceTest.class,
+    //SQLiteConnectionPoolDataSourceTest.class,
     SQLiteJDBCLoaderTest.class,
-    StatementTest.class,
+    //StatementTest.class,
     TransactionTest.class,
     UDFTest.class,
     JSON1Test.class,

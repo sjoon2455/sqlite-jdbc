@@ -144,6 +144,8 @@ public class PrepStmtTest
         rs.close();
     }
 
+    
+
     @Test
     public void finalizePrep() throws SQLException {
         conn.prepareStatement("select null;");
@@ -227,6 +229,22 @@ public class PrepStmtTest
         assertEquals(new String(b3, "UTF-8"), rs.getString(3));
         assertFalse(rs.next());
         rs.close();
+    }
+
+    @Test
+    public void setNull() throws SQLException, UnsupportedEncodingException {
+       
+        PreparedStatement prep = conn.prepareStatement("select ?, ?, ?;");
+        PreparedStatement pre = conn.prepareStatement("select ?, ?, ?;");
+        
+        byte[] b3 = utf08.getBytes("UTF-8");
+        ByteArrayInputStream inUnicode = new ByteArrayInputStream(b3);
+        
+        prep.setUnicodeStream(1, null, 0);
+        pre.setString(1, null);
+        
+        assertArrayEq(prep.executeBatch(), pre.executeBatch());
+        
     }
 
     @Test

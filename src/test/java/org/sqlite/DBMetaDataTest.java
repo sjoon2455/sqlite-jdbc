@@ -88,6 +88,10 @@ public class DBMetaDataTest
         rs.close();
     }
 
+    
+
+
+
     @Test
     public void getTableTypes() throws SQLException {
         ResultSet rs = meta.getTableTypes();
@@ -1150,8 +1154,10 @@ public class DBMetaDataTest
 
         ResultSet cr = meta.getCrossReference(null, null, "person", null, null, "address");
         //assertTrue(cr.next());
+        
 
     }
+
 
     /* TODO
     
