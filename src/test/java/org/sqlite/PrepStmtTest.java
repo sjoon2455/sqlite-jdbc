@@ -237,12 +237,9 @@ public class PrepStmtTest
         PreparedStatement prep = conn.prepareStatement("select ?, ?, ?;");
         PreparedStatement pre = conn.prepareStatement("select ?, ?, ?;");
         
-        byte[] b3 = utf08.getBytes("UTF-8");
-        ByteArrayInputStream inUnicode = new ByteArrayInputStream(b3);
-        
         prep.setUnicodeStream(1, null, 0);
         pre.setString(1, null);
-        
+
         assertArrayEq(prep.executeBatch(), pre.executeBatch());
         
     }
